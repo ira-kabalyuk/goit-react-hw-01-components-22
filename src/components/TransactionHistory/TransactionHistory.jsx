@@ -18,10 +18,14 @@ const TransactionHistory = ({items}) => {
           <td>{item.amount}</td>
           <td>{item.currency}</td>
         </tr>
-      ))}    
+      ))}
   </tbody>
 </table>
   )
+}
+
+TransactionHistory.propTypes = {
+  items: PropTypes.array.isRequired,
 }
   
 export {TransactionHistory}
