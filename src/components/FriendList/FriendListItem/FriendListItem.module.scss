@@ -1,0 +1,31 @@
+
+.item {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 16px;
+  justify-content: start;
+  align-items: center;
+  width: 400px;
+  height: 115px;
+  padding: 8px 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.status {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.avatar {
+  width: 50px;
+  display: block;
+}
+
+.name {
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
