@@ -14,7 +14,7 @@ const colors = [
 const Statistic = ({ items }) => {
   return (
     <section className={styles.statistics}>
-      <h2 className={styles.title}>{title}</h2>
+      {title && <h2 className={styles.title}>{title}</h2>}
       <ul className={styles.list}>
         {items.map((item, index) => (
           <li style={{ 'background': colors[index] }} className={styles.item} key={item.id}>
@@ -24,13 +24,20 @@ const Statistic = ({ items }) => {
         ))}
       </ul>
     </section>
-  )
+  );
 }
 
 
 Statistic.propTypes = {
-  items: PropTypes.array.isRequired,
-}
+  title: PropTypes.string,  
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }),
+  ),
+};
 
 
 export {Statistic}

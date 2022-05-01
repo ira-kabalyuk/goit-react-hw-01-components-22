@@ -7,9 +7,7 @@ const Profile = ({
   tag,
   location,
   avatar,
-  followers,
-  views,
-  likes
+  stats
 }) => {
 
   return (
@@ -23,15 +21,15 @@ const Profile = ({
       <ul className={styles.stats}>
         <li>
           <span className={styles.label}>Followers</span>
-          <span className={styles.quantity}>{followers}</span>
+          <span className={styles.quantity}>{stats.followers}</span>
         </li>
         <li>
           <span className={styles.label}>Views</span>
-          <span className={styles.quantity}>{views}</span>
+          <span className={styles.quantity}>{stats.views}</span>
         </li>
         <li>
           <span className={styles.label}>Likes</span>
-          <span className={styles.quantity}>{likes}</span>
+          <span className={styles.quantity}>{stats.likes}</span>
         </li>
       </ul>
     </div>
@@ -42,9 +40,11 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  followers: PropTypes.number.isRequired,
-  views: PropTypes.number.isRequired,
-  likes: PropTypes.number.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  })  
 }
 
 export {Profile}

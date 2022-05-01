@@ -4,13 +4,12 @@ import {FriendListItem} from './FriendListItem'
 const FriendList = ({cards}) => {
   return (
     <ul className={styles.friendList}>
-      {cards.map(card => (
+      {cards.map(({id, isOnline, avatar, name}) => (
         <FriendListItem
-          statusClassName={card.isOnline ? styles.online : styles.offline}
-          key={card.id}
-          status={card.isOnline}
-          avatar={card.avatar}
-          name={card.name}
+          key={id}
+          status={isOnline}
+          avatar={avatar}
+          name={name}
         />
       ))}
     </ul>

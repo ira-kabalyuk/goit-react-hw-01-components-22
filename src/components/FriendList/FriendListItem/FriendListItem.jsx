@@ -2,10 +2,10 @@ import PropTypes, { string } from 'prop-types';
 import cx from 'classnames';
 import styles from './FriendListItem.module.scss';
 
-const FriendListItem = ({status, avatar, name, statusClassName}) => {
+const FriendListItem = ({status, avatar, name}) => {
   return (
     <li className={styles.item}>
-      <span className={cx(styles.status, statusClassName)}>{status}</span>
+      <span className={cx(styles.status, status && styles.online)}>{status}</span>
         <img className={styles.avatar} src={avatar} alt={name} width="48" />
       <p className={styles.name}>{name}</p>
     </li>
