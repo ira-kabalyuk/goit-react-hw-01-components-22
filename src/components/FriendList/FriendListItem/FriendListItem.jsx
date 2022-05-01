@@ -12,8 +12,7 @@ const FriendListItem = ({status, avatar, name}) => {
   )
 }
 
-FriendListItem.propTypes = {
-  statusClassName: PropTypes.string,
+FriendListItem.propTypes = {  
   status: PropTypes.bool.isRequired,
   avatar: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,

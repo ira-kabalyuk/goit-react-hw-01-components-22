@@ -16,10 +16,10 @@ const Statistic = ({ items }) => {
     <section className={styles.statistics}>
       {title && <h2 className={styles.title}>{title}</h2>}
       <ul className={styles.list}>
-        {items.map((item, index) => (
-          <li style={{ 'background': colors[index] }} className={styles.item} key={item.id}>
-            <span className={styles.label}>{item.label}</span>
-            <span className={styles.percentage}>{item.percentage}</span>
+        {items.map(({ id, label, percentage }, index) => (
+          <li style={{ 'background': colors[index] }} className={styles.item} key={id}>
+            <span className={styles.label}>{label}</span>
+            <span className={styles.percentage}>{percentage}</span>
           </li>
         ))}
       </ul>
@@ -29,7 +29,7 @@ const Statistic = ({ items }) => {
 
 
 Statistic.propTypes = {
-  title: PropTypes.string,  
+  title: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
